@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 import { navLink } from "../data/dry";
 
@@ -6,7 +5,7 @@ function Header() {
   return (
     <section id="header">
       <header className="absolute inset-x-32 top-8 bg-white flex justify-center items-center gap-12 text-[#013300] text-lg font-semibold p-4 rounded-[2.5rem] z-10">
-        <Image
+        <img
           src="/images/global/logo.png"
           alt="logo"
           width={90}
