@@ -1,6 +1,11 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { heroCarousel } from "../data/dry";
 
 function Hero() {
+  const [carouselIndex, setCarouselIndex] = useState(0);
+
   return (
     <section id="hero">
       <div className="h-screen bg-[#013300] relative flex items-center px-32">
@@ -13,8 +18,8 @@ function Hero() {
         />
         <div className="absolute right-32 w-[21rem] h-[31rem] translate-y-8">
           <img
-            src="/images/hero/carousel-1.webp"
-            alt="cafe breeze"
+            src={heroCarousel[carouselIndex].img}
+            alt={heroCarousel[carouselIndex].menu}
             className="rounded-t-[2.5rem] object-cover object-[50%] w-full h-96"
           />
           <div className="absolute inset-x-0 top-[14rem] bottom-0 rounded-b-[2.5rem] bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255)_50%)] flex items-center">
@@ -26,16 +31,33 @@ function Hero() {
               className="absolute bottom-7 right-3"
             />
             <div className="absolute bottom-4 inset-x-0 flex justify-center gap-2">
-              <button className="w-2 h-2 rounded-full bg-[#013300]"></button>
-              <button className="w-2 h-2 rounded-full bg-[#d9d9d9]"></button>
-              <button className="w-2 h-2 rounded-full bg-[#d9d9d9]"></button>
+              <button
+                onClick={() => setCarouselIndex(0)}
+                className={`w-2 h-2 rounded-full ${
+                  carouselIndex === 0 ? "bg-[#013300]" : "bg-[#d9d9d9]"
+                }`}
+              ></button>
+              <button
+                onClick={() => setCarouselIndex(1)}
+                className={`w-2 h-2 rounded-full ${
+                  carouselIndex === 1 ? "bg-[#013300]" : "bg-[#d9d9d9]"
+                }`}
+              ></button>
+              <button
+                onClick={() => setCarouselIndex(2)}
+                className={`w-2 h-2 rounded-full ${
+                  carouselIndex === 2 ? "bg-[#013300]" : "bg-[#d9d9d9]"
+                }`}
+              ></button>
             </div>
             <div className="translate-y-12 translate-x-7">
-              <h1 className="font-bold text-2xl">Cafe Breeze</h1>
+              <h1 className="font-bold text-2xl">
+                {heroCarousel[carouselIndex].menu}
+              </h1>
               <p className="text-[#013300] font-serif font-medium">
-                Espresso, Milk, Cream, Mint
+                {heroCarousel[carouselIndex].ingredients.join(", ")}
                 <br />
-                30K
+                {heroCarousel[carouselIndex].price}K
               </p>
             </div>
           </div>

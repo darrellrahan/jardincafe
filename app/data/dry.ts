@@ -16,3 +16,24 @@ export const navLink = [
     link: "About Us",
   },
 ];
+
+export const heroCarousel = [
+  {
+    img: "/images/hero/carousel-1.webp",
+    menu: "Cafe Breeze",
+    ingredients: ["Espresso", "Milk", "Cream", "Mint"],
+    price: 30,
+  },
+  {
+    img: "/images/hero/carousel-2.webp",
+    menu: "Big Breakfast",
+    ingredients: ["Beef", "Mushroom", "Beans"],
+    price: 60,
+  },
+  {
+    img: "/images/hero/carousel-3.jpeg",
+    menu: "Beef Burger",
+    ingredients: ["Cheeseburger", "Egg", "Fries"],
+    price: 59,
+  },
+];
