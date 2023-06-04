@@ -11,26 +11,52 @@ function Hero() {
           height={400}
           className="absolute top-0 left-0"
         />
-        <div className="flex w-full z-20">
-          <div className="flex flex-col gap-8 items-baseline basis-[80%]">
-            <div>
-              <h1 className="text-6xl leading-[1.15] text-white">
-                Thousands Of Flavours
-                <br />
-                In One Place
-              </h1>
-              <h3 className="text-xl text-white mt-4">
-                Order your perfect food or drinks here
-              </h3>
+        <div className="absolute right-32 w-[21rem] h-[31rem] translate-y-8">
+          <img
+            src="/images/hero/carousel-1.webp"
+            alt="cafe breeze"
+            className="rounded-t-[2.5rem] object-cover object-[50%] w-full h-96"
+          />
+          <div className="absolute inset-x-0 top-[14rem] bottom-0 rounded-b-[2.5rem] bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255)_50%)] flex items-center">
+            <img
+              src="/images/global/logo.png"
+              alt="logo"
+              width={60}
+              height={60}
+              className="absolute bottom-7 right-3"
+            />
+            <div className="absolute bottom-4 inset-x-0 flex justify-center gap-2">
+              <button className="w-2 h-2 rounded-full bg-[#013300]"></button>
+              <button className="w-2 h-2 rounded-full bg-[#d9d9d9]"></button>
+              <button className="w-2 h-2 rounded-full bg-[#d9d9d9]"></button>
             </div>
-            <a
-              href="/booking"
-              className="px-5 py-2 rounded-[2.5rem] bg-white text-[#013300] font-semibold"
-            >
-              Book Table
-            </a>
+            <div className="translate-y-12 translate-x-7">
+              <h1 className="font-bold text-2xl">Cafe Breeze</h1>
+              <p className="text-[#013300] font-serif font-medium">
+                Espresso, Milk, Cream, Mint
+                <br />
+                30K
+              </p>
+            </div>
           </div>
-          <div className="basis-[20%]"></div>
+        </div>
+        <div className="flex flex-col gap-8 items-baseline z-10">
+          <div>
+            <h1 className="text-6xl leading-[1.15] text-white">
+              Thousands Of Flavours
+              <br />
+              In One Place
+            </h1>
+            <h3 className="text-xl text-white mt-4">
+              Order your perfect food or drinks here
+            </h3>
+          </div>
+          <a
+            href="/booking"
+            className="px-5 py-2 rounded-[2.5rem] bg-white text-[#013300] font-semibold"
+          >
+            Book Table
+          </a>
         </div>
       </div>
     </section>
