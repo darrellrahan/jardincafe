@@ -26,7 +26,7 @@ function Hero() {
           height={400}
           className="absolute top-0 left-0"
         />
-        <div className="absolute right-32 w-[21rem] h-[31rem] flex translate-y-8 overflow-hidden">
+        <div className="absolute right-32 w-[21rem] h-[31rem] translate-y-8 overflow-hidden">
           {heroCarousel.map((data, index) => (
             <div
               key={data.menu}

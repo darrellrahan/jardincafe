@@ -37,3 +37,9 @@ export const heroCarousel = [
     price: 59,
   },
 ];
+
+export const photoCarousel = [
+  "/images/photo/carousel-1.jpg",
+  "/images/photo/carousel-2.jpg",
+  "/images/photo/carousel-3.jpg",
+];
