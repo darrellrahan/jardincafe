@@ -1,5 +1,9 @@
 export const navLink = [
   {
+    url: "/",
+    link: "Home",
+  },
+  {
     url: "/menu",
     link: "Menu",
   },
@@ -35,6 +39,24 @@ export const heroCarousel = [
     menu: "Beef Burger",
     ingredients: ["Cheeseburger", "Egg", "Fries"],
     price: 59,
+  },
+];
+
+export const favourites = [
+  {
+    img: "/images/favourites/menu-1.png",
+  },
+  {
+    img: "/images/favourites/menu-2.png",
+  },
+  {
+    img: "/images/favourites/menu-3.png",
+  },
+  {
+    img: "/images/favourites/menu-4.png",
+  },
+  {
+    img: "/images/favourites/menu-5.jpg",
   },
 ];
 

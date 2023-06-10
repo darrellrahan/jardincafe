@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Maps from "./components/Maps";
 import Photo from "./components/Photo";
-import Promo from "./components/Promo";
+import Favourite from "./components/Favourite";
 import Testimonials from "./components/Testimonials";
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
     <main>
       <Header />
       <Hero />
-      <Promo />
+      <Favourite />
       <Photo />
       <Maps />
       <Testimonials />

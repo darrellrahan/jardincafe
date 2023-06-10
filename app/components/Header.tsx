@@ -30,7 +30,11 @@ function Header() {
           className="absolute left-4 translate-y-1"
         />
         {navLink.map((data) => (
-          <a href={data.url} key={data.link}>
+          <a
+            href={data.url}
+            key={data.link}
+            className="relative after:absolute after:bottom-0 after:w-0 hover:after:w-full after:inset-x-0 after:h-[2px] after:bg-[#013300] after:duration-300 after:ease-linear"
+          >
             {data.link}
           </a>
         ))}

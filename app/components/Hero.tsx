@@ -47,7 +47,6 @@ function Hero() {
                   height={60}
                   className="absolute bottom-7 right-3"
                 />
-
                 <div className="translate-y-12 translate-x-7">
                   <h1 className="font-bold text-2xl">{data.menu}</h1>
                   <p className="text-[#013300] font-serif font-medium">
@@ -93,7 +92,7 @@ function Hero() {
           </div>
           <a
             href="/booking"
-            className="px-5 py-2 rounded-[2.5rem] bg-white text-[#013300] font-semibold"
+            className="px-5 py-2 rounded-[2.5rem] bg-white text-[#013300] font-semibold hover:scale-[0.9] duration-300 ease-linear"
           >
             Book Table
           </a>

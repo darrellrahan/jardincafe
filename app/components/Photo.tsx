@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { photoCarousel } from "../data/dry";
 
 function Photo() {
@@ -47,24 +46,6 @@ function Photo() {
           );
         })}
         <div className="absolute inset-0 bg-[#25252599] z-10"></div>
-        <div className="flex justify-between items-center w-full z-20">
-          <button
-            onClick={() =>
-              setCarouselIndex(carouselIndex === 0 ? 2 : carouselIndex - 1)
-            }
-            className="w-14 h-14 border-[2.5px] border-white flex items-center justify-center bg-transparent text-white hover:bg-white hover:text-[#252525] duration-200 ease-linear rounded-full"
-          >
-            <IoIosArrowBack fontSize="1.25rem" />
-          </button>
-          <button
-            onClick={() =>
-              setCarouselIndex(carouselIndex === 2 ? 0 : carouselIndex + 1)
-            }
-            className="w-14 h-14 border-[2.5px] border-white flex items-center justify-center bg-transparent text-white hover:bg-white hover:text-[#252525] duration-200 ease-linear rounded-full"
-          >
-            <IoIosArrowForward fontSize="1.25rem" />
-          </button>
-        </div>
       </div>
     </section>
   );
