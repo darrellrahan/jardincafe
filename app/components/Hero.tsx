@@ -18,7 +18,7 @@ function Hero() {
 
   return (
     <section id="hero">
-      <div className="h-screen bg-[#013300] relative flex items-center px-32">
+      <div className="h-[110vh] bg-[#013300] relative flex items-center px-32">
         <img
           src="/images/hero/coffee-seeds.png"
           alt="Coffee Seeds"
@@ -26,7 +26,7 @@ function Hero() {
           height={400}
           className="absolute top-0 left-0"
         />
-        <div className="absolute right-32 w-[21rem] h-[31rem] translate-y-8 overflow-hidden">
+        <div className="absolute top-36 right-32 w-[21rem] h-[31rem] translate-y-8 overflow-hidden">
           {heroCarousel.map((data, index) => (
             <div
               key={data.menu}
