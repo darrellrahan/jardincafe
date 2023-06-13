@@ -11,7 +11,7 @@ function Favourite() {
           <button>
             <IoIosArrowBack fontSize="2.5rem" color="#013300" />
           </button>
-          <div className="flex gap-6">
+          <div className="flex gap-8">
             {favourites.map((data) => (
               <div key={data.img}>
                 <div>

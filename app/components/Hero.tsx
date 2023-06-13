@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { heroCarousel } from "../data/dry";
+import { heroCarousel, socials } from "../data/dry";
 
 function Hero() {
   const [carouselIndex, setCarouselIndex] = useState(0);
@@ -18,13 +18,20 @@ function Hero() {
 
   return (
     <section id="hero">
-      <div className="h-[110vh] bg-[#013300] relative flex items-center px-32">
+      <div className="h-[110vh] bg-[#013300] relative flex items-center px-32 overflow-hidden">
         <img
           src="/images/hero/coffee-seeds.png"
           alt="Coffee Seeds"
           width={400}
           height={400}
           className="absolute top-0 left-0"
+        />
+        <img
+          src="/images/hero/coffee-seeds-2.png"
+          alt="Coffee Seeds"
+          width={400}
+          height={400}
+          className="absolute -bottom-[12rem] right-0"
         />
         <div className="absolute top-36 right-32 w-[21rem] h-[31rem] translate-y-8 overflow-hidden">
           {heroCarousel.map((data, index) => (
@@ -96,6 +103,17 @@ function Hero() {
           >
             Book Table
           </a>
+        </div>
+        <div className="flex items-center gap-4 absolute bottom-32">
+          {socials.map((data) => (
+            <a href={data.url} target="_blank">
+              <data.icon
+                fontSize="1.75rem"
+                color="#fff"
+                className="hover:scale-[0.9] duration-300 ease-linear"
+              />
+            </a>
+          ))}
         </div>
       </div>
     </section>

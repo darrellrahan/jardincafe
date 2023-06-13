@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { navLink } from "../data/dry";
+import { AiOutlineLogin } from "react-icons/ai";
 
 function Header() {
   const [top, setTop] = useState("top-8");
@@ -20,7 +21,7 @@ function Header() {
   return (
     <section id="header">
       <header
-        className={`fixed inset-x-32 ${top} bg-white flex justify-center items-center gap-12 text-[#013300] text-lg font-semibold p-4 rounded-[2.5rem] z-50 duration-300 ease-linear`}
+        className={`fixed inset-x-32 ${top} bg-white flex justify-between items-center text-[#013300] text-lg font-semibold p-4 rounded-[2.5rem] z-50 duration-300 ease-linear`}
       >
         <img
           src="/images/global/logo.png"
@@ -29,15 +30,26 @@ function Header() {
           height={90}
           className="absolute left-4 translate-y-1"
         />
-        {navLink.map((data) => (
-          <a
-            href={data.url}
-            key={data.link}
-            className="relative after:absolute after:bottom-0 after:w-0 hover:after:w-full after:inset-x-0 after:h-[2px] after:bg-[#013300] after:duration-300 after:ease-linear"
-          >
-            {data.link}
-          </a>
-        ))}
+        <div></div>
+        <div className="flex items-center gap-8">
+          {navLink.map((data) => (
+            <a
+              href={data.url}
+              key={data.link}
+              className="relative after:absolute after:bottom-0 after:w-0 hover:after:w-full after:inset-x-0 after:h-[2px] after:bg-[#013300] after:duration-300 after:ease-linear"
+            >
+              {data.link}
+            </a>
+          ))}
+        </div>
+        <a href="/login" className="flex items-center gap-2 group">
+          <span className="relative after:absolute after:bottom-0 after:w-0 group-hover:after:w-full after:inset-x-0 after:h-[2px] after:bg-[#013300] after:duration-300 after:ease-linear">
+            Login
+          </span>
+          <span>
+            <AiOutlineLogin fontSize="2rem" />
+          </span>
+        </a>
       </header>
     </section>
   );

@@ -1,3 +1,6 @@
+import { AiOutlineInstagram, AiOutlineWhatsApp } from "react-icons/ai";
+import { TfiTwitter } from "react-icons/tfi";
+
 export const navLink = [
   {
     url: "/",
@@ -55,13 +58,25 @@ export const favourites = [
   {
     img: "/images/favourites/menu-4.png",
   },
-  {
-    img: "/images/favourites/menu-5.jpg",
-  },
 ];
 
 export const photoCarousel = [
   "/images/photo/carousel-1.jpg",
   "/images/photo/carousel-2.jpg",
   "/images/photo/carousel-3.jpg",
+];
+
+export const socials = [
+  {
+    icon: AiOutlineInstagram,
+    url: "https://www.instagram.com/jardinbdg",
+  },
+  {
+    icon: AiOutlineWhatsApp,
+    url: "https://wa.me/6282217957112",
+  },
+  {
+    icon: TfiTwitter,
+    url: "https://www.twitter.com",
+  },
 ];
