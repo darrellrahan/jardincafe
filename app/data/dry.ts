@@ -45,18 +45,30 @@ export const heroCarousel = [
   },
 ];
 
-export const favourites = [
+export const menu = [
   {
-    img: "/images/favourites/menu-1.png",
+    img: "/images/menu/teriyaki-bowl.png",
+    name: "Chicken Teriyaki Bowl",
+    desc: "Grilled Chicken Teriyaki Bowl paired with delicious teppan vegetables and sunny side up egg.",
+    price: 32,
   },
   {
-    img: "/images/favourites/menu-2.png",
+    img: "/images/menu/chicken-quesadilla.png",
+    name: "Chicken Quesadilla",
+    desc: "Packed with juicy chicken, bell-pepper, onion & melted mozzarella.",
+    price: 28,
   },
   {
-    img: "/images/favourites/menu-3.png",
+    img: "/images/menu/dori-ricebowl.png",
+    name: "Dori Rice Bowl",
+    desc: "Crispy Dori with cheese sauce on top, served with rice and fresh mix.",
+    price: 35,
   },
   {
-    img: "/images/favourites/menu-4.png",
+    img: "/images/menu/quinoa-salad.png",
+    name: "Quinoa Beef Salad",
+    desc: "Healthy yet delicate duet of red quinoa & stirred fried beef on the bed of fresh mix green salad.",
+    price: 25,
   },
 ];
 

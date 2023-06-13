@@ -39,7 +39,7 @@ function Hero() {
               key={data.menu}
               className={`${
                 index === carouselIndex ? "opacity-100" : "opacity-0"
-              } absolute inset-0 duration-300 ease-linear w-full h-full`}
+              } absolute inset-0 duration-300 ease-linear w-full h-full select-none`}
             >
               <img
                 src={data.img}
@@ -104,9 +104,9 @@ function Hero() {
             Book Table
           </a>
         </div>
-        <div className="flex items-center gap-4 absolute bottom-32">
+        <div className="flex items-center gap-4 absolute bottom-32 animate-bounce">
           {socials.map((data) => (
-            <a href={data.url} target="_blank">
+            <a key={data.url} href={data.url} target="_blank">
               <data.icon
                 fontSize="1.75rem"
                 color="#fff"
