@@ -15,13 +15,8 @@ function Maps() {
             <h1 className="text-4xl font-semibold">Find Our Cafe</h1>
           </div>
           <p className="text-[#8e8e8e] mt-8">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
-            eius ullam laborum esse? Vitae quod voluptatum consequuntur, quo nam
-            dolor odit dolorem? Fugiat suscipit perspiciatis voluptates
-            distinctio doloremque fugit saepe animi, eaque molestiae in adipisci
-            aperiam. Porro adipisci sit quam velit nihil, minima neque earum
-            deleniti fugiat illo, provident molestias ullam esse id eaque, nobis
-            quo eligendi odio?
+            Jl. Cimanuk No.1A, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa
+            Barat 40115
           </p>
         </div>
         <iframe

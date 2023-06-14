@@ -13,7 +13,7 @@ function WhyChooseUs() {
         <div>
           <h1 className="text-4xl font-medium">Why choose us?</h1>
           {whyChooseUs.map((data) => (
-            <div key={data.desc} className="flex items-center gap-4 mt-8">
+            <div key={data.desc} className="flex items-center gap-4 mt-12">
               <img src={data.icon} alt={data.title} width={50} height={50} />
               <div>
                 <h1 className="font-medium text-lg">{data.title}</h1>
