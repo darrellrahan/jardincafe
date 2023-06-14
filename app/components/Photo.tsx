@@ -18,7 +18,7 @@ function Photo() {
 
   return (
     <section id="photo">
-      <div className="bg-[#252525] px-32 h-[22rem] flex items-center relative overflow-hidden">
+      <div className="bg-[#252525] px-32 h-[25rem] flex items-center relative overflow-hidden">
         {photoCarousel.map((data, index) => {
           let className = "translate-x-full opacity-0";
 

@@ -92,3 +92,21 @@ export const socials = [
     url: "https://www.twitter.com",
   },
 ];
+
+export const whyChooseUs = [
+  {
+    icon: "/images/why-choose-us/delicious-food.png",
+    title: "Delicious Food",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+  {
+    icon: "/images/why-choose-us/cozy-place.png",
+    title: "Cozy Place",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+  {
+    icon: "/images/why-choose-us/easy-payment.png",
+    title: "Easy Payment",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+];
