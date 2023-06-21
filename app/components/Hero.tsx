@@ -48,7 +48,7 @@ function Hero() {
               />
               <div className="absolute inset-x-0 top-[14rem] bottom-0 rounded-b-[2.5rem] bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255)_50%)] flex items-center">
                 <img
-                  src="/images/global/logo.png"
+                  src="/images/global/logo.svg"
                   alt="logo"
                   width={60}
                   height={60}

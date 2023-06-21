@@ -11,8 +11,8 @@ export const navLink = [
     link: "Menu",
   },
   {
-    url: "/experience",
-    link: "Experience",
+    url: "/booking",
+    link: "Booking",
   },
   {
     url: "/career",

@@ -24,7 +24,7 @@ function Header() {
         className={`fixed inset-x-32 ${top} bg-white flex justify-between items-center text-[#013300] text-lg font-semibold p-4 rounded-[2.5rem] z-50 duration-300 ease-linear`}
       >
         <img
-          src="/images/global/logo.png"
+          src="/images/global/logo.svg"
           alt="logo"
           width={90}
           height={90}
