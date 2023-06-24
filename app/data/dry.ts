@@ -110,3 +110,39 @@ export const whyChooseUs = [
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
 ];
+
+export const menuCategory = [
+  {
+    category: "Breakfast",
+    desc: "7 AM - 11 AM ONLY",
+    bg: "bg-[url('/images/menu/breakfast.png')]",
+  },
+  {
+    category: "All Day Breakfast",
+    bg: "bg-[url('/images/menu/all-day-breakfast.png')]",
+  },
+  {
+    category: "Appetizer",
+    bg: "bg-[url('/images/menu/appetizer.png')]",
+  },
+  {
+    category: "Main Course",
+    bg: "bg-[url('/images/menu/main-course.png')]",
+  },
+  {
+    category: "Pasta & Pizza",
+    bg: "bg-[url('/images/menu/pasta-pizza.png')]",
+  },
+  {
+    category: "Rice Bowl",
+    bg: "bg-[url('/images/menu/rice-bowl.png')]",
+  },
+  {
+    category: "Desert",
+    bg: "bg-[url('/images/menu/desert.png')]",
+  },
+  {
+    category: "Drinks",
+    bg: "bg-[url('/images/menu/drink.png')]",
+  },
+];
