@@ -5,9 +5,12 @@ import { AiOutlineCalendar, AiOutlineClockCircle } from "react-icons/ai";
 import { IoPersonOutline } from "react-icons/io5";
 import { MdOutlineTableBar } from "react-icons/md";
 import { useInputValueContext } from "../context/inputValue";
+import { sendReservation } from "../firebase";
+import { useRouter } from "next/navigation";
 
 function BookingDetail() {
   const { inputValue } = useInputValueContext();
+  const { push } = useRouter();
 
   return (
     <>
@@ -55,12 +58,20 @@ function BookingDetail() {
           </div>
         </div>
       </div>
-      <a
-        href="/"
+      <button
+        onClick={() => {
+          sendReservation(
+            inputValue.people,
+            inputValue.date,
+            inputValue.time,
+            inputValue.area
+          );
+          push("/");
+        }}
         className="bg-[#013300] rounded-[0.625rem] text-white p-3 font-medium w-[21.875rem] border-2 border-[#013300] hover:text-[#013300] hover:bg-transparent duration-300 ease-linear"
       >
         Confirm
-      </a>
+      </button>
     </>
   );
 }

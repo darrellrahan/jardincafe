@@ -68,9 +68,16 @@ function BookingForm() {
               type={timeInputType}
               onFocus={() => setTimeInputType("date")}
               onBlur={() => setTimeInputType("text")}
-              onChange={(e) =>
-                setInputValue({ ...inputValue, date: e.target.value })
-              }
+              onChange={(e) => {
+                const date = new Date(e.target.value);
+                setInputValue({
+                  ...inputValue,
+                  date: `${date.toLocaleString("en-UK", {
+                    day: "numeric",
+                    month: "long",
+                  })}, ${date.getFullYear()}`,
+                });
+              }}
               placeholder="Pick a date"
               className="w-[18.75rem] h-[3.75rem] border-2 border-[#013300] rounded-[0.625rem] flex items-center px-4 font-medium text-lg text-[#013300] z-10 relative bg-transparent placeholder:text-[#a9a9a9]"
             />
