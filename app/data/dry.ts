@@ -146,3 +146,36 @@ export const menuCategory = [
     bg: "bg-[url('/images/menu/drink.png')]",
   },
 ];
+
+export const testimonials = [
+  {
+    img: "/images/testimonials/james-hartono.png",
+    name: "James Hartono",
+    review: "Great service! Really enjoyed our visit.",
+  },
+  {
+    img: "/images/testimonials/ica-rebecca.png",
+    name: "Ica Rebecca",
+    review: "Wow, what an amazing dining experience!",
+  },
+  {
+    img: "/images/testimonials/amanda-rebecca.png",
+    name: "Amanda Rebecca",
+    review: "I had the most delightful experience dining at Jardin",
+  },
+  {
+    img: "/images/testimonials/james-hartono.png",
+    name: "James Hartono",
+    review: "Great service! Really enjoyed our visit.",
+  },
+  {
+    img: "/images/testimonials/ica-rebecca.png",
+    name: "Ica Rebecca",
+    review: "Wow, what an amazing dining experience!",
+  },
+  {
+    img: "/images/testimonials/amanda-rebecca.png",
+    name: "Amanda Rebecca",
+    review: "I had the most delightful experience dining at Jardin",
+  },
+];

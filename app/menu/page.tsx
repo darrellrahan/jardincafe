@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import HeroMenu from "../components/HeroMenu";
 import MenuCategory from "../components/MenuCategory";
@@ -9,6 +10,7 @@ function page() {
       <Header />
       <HeroMenu />
       <MenuCategory />
+      <Footer />
     </main>
   );
 }

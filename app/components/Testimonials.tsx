@@ -1,17 +1,23 @@
 import React from "react";
+import { testimonials } from "../data/dry";
+import Testimonial from "./Testimonial";
 
 function Testimonials() {
   return (
     <section id="testimonials">
-      <div className="grid grid-cols-3 gap-4 h-[35rem] p-32">
-        <div className="w-full h-full rounded-[2.5rem] bg-[#848181] flex items-center justify-center text-white text-2xl font-medium">
-          Testimonial
-        </div>
-        <div className="w-full h-full rounded-[2.5rem] bg-[#848181] flex items-center justify-center text-white text-2xl font-medium">
-          Testimonial
-        </div>
-        <div className="w-full h-full rounded-[2.5rem] bg-[#848181] flex items-center justify-center text-white text-2xl font-medium">
-          Testimonial
+      <div className="px-32 py-16">
+        <h1 className="text-[#013300] text-4xl font-semibold mb-16">
+          What Our Customers Say
+        </h1>
+        <div className="flex gap-5 overflow-x-auto scroll-smooth p-4 -translate-x-4 -translate-y-4">
+          {testimonials.map((data) => (
+            <Testimonial
+              key={data.name}
+              img={data.img}
+              name={data.name}
+              review={data.review}
+            />
+          ))}
         </div>
       </div>
     </section>
