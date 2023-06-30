@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, addDoc, collection } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAQan2OFaHWF5KxTQuwwNd61hxNtamVuQc",
@@ -11,24 +12,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth();
 const db = getFirestore(app);
 
-async function sendReservation(
-  people: string,
-  date: string,
-  time: string,
-  area: string
-) {
-  try {
-    await addDoc(collection(db, "reservation"), {
-      people: people,
-      date: date,
-      time: time,
-      area: area,
-    });
-  } catch (e) {
-    alert(e);
-  }
-}
-
-export { sendReservation };
+export { auth, db };

@@ -1,11 +1,36 @@
 "use client";
 
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import React, { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
+import { auth } from "../firebase";
+import { useRouter } from "next/navigation";
 
 function Auth({ type }: { type: string }) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [passwordType, setPasswordType] = useState("password");
+  const { push } = useRouter();
+
+  function register(name: string, email: string, password: string) {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        updateProfile(userCredential.user, {
+          displayName: name,
+        })
+          .then(() => {
+            push("/");
+          })
+          .catch((error) => {
+            alert(`fail register: ${error.message}`);
+          });
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  }
 
   return (
     <section id="auth">
@@ -32,6 +57,8 @@ function Auth({ type }: { type: string }) {
                   Name
                 </label>
                 <input
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
                   type="text"
                   id="name"
                   className="w-full h-[3.5rem] flex items-center px-4 border-2 border-[#013300] rounded-[0.625rem] bg-transparent"
@@ -46,6 +73,8 @@ function Auth({ type }: { type: string }) {
                 Email
               </label>
               <input
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
                 type="email"
                 id="email"
                 className="w-full h-[3.5rem] flex items-center px-4 border-2 border-[#013300] rounded-[0.625rem] bg-transparent"
@@ -60,6 +89,8 @@ function Auth({ type }: { type: string }) {
               </label>
               <div className="relative">
                 <input
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
                   type={passwordType}
                   id="password"
                   className="w-full h-[3.5rem] flex items-center px-4 border-2 border-[#013300] rounded-[0.625rem] bg-transparent"
@@ -86,7 +117,14 @@ function Auth({ type }: { type: string }) {
                 Forgot password?
               </a>
             </div>
-            <button className="w-full h-[3.5rem] flex items-center justify-center border-2 border-[#013300] rounded-[0.625rem] bg-[#013300] text-white text-lg hover:bg-transparent hover:text-[#013300] duration-300 ease-linear font-medium">
+            <button
+              onClick={() =>
+                name !== "" && email !== "" && password !== ""
+                  ? register(name, email, password)
+                  : alert("Please fill all the fields.")
+              }
+              className="w-full h-[3.5rem] flex items-center justify-center border-2 border-[#013300] rounded-[0.625rem] bg-[#013300] text-white text-lg hover:bg-transparent hover:text-[#013300] duration-300 ease-linear font-medium"
+            >
               {type === "login" ? "Login" : "Register"}
             </button>
             <div className="flex items-center gap-4 my-4">

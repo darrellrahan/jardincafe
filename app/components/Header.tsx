@@ -4,9 +4,12 @@ import React, { useEffect, useState } from "react";
 import { navLink } from "../data/dry";
 import { AiOutlineLogin } from "react-icons/ai";
 import { usePathname } from "next/navigation";
+import { onAuthStateChanged, signOut, User } from "firebase/auth";
+import { auth } from "../firebase";
 
 function Header() {
   const [top, setTop] = useState("top-8");
+  const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
     const onPageScroll = () => {
@@ -17,6 +20,10 @@ function Header() {
     return () => {
       window.removeEventListener("scroll", onPageScroll);
     };
+  }, []);
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => user && setUser(user));
   }, []);
 
   return (
@@ -46,14 +53,31 @@ function Header() {
             </a>
           ))}
         </div>
-        <a href="/login" className="flex items-center gap-2 group">
-          <span className="relative after:absolute after:bottom-0 after:w-0 group-hover:after:w-full after:inset-x-0 after:h-[2px] after:bg-[#013300] after:duration-300 after:ease-linear">
-            Login
-          </span>
-          <span>
-            <AiOutlineLogin fontSize="2rem" />
-          </span>
-        </a>
+        {user ? (
+          <div className="flex gap-4 items-center">
+            <span>{user.displayName}</span>
+            <button
+              onClick={() => {
+                signOut(auth)
+                  .then(() => {
+                    setUser(null);
+                  })
+                  .catch((e) => alert(e.message));
+              }}
+            >
+              Logout
+            </button>
+          </div>
+        ) : (
+          <a href="/login" className="flex items-center gap-2 group">
+            <span className="relative after:absolute after:bottom-0 after:w-0 group-hover:after:w-full after:inset-x-0 after:h-[2px] after:bg-[#013300] after:duration-300 after:ease-linear">
+              Login
+            </span>
+            <span>
+              <AiOutlineLogin fontSize="2rem" />
+            </span>
+          </a>
+        )}
       </header>
     </section>
   );
