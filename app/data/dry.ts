@@ -165,17 +165,17 @@ export const testimonials = [
   },
   {
     img: "/images/testimonials/james-hartono.png",
-    name: "James Hartono",
+    name: "Hartono James",
     review: "Great service! Really enjoyed our visit.",
   },
   {
     img: "/images/testimonials/ica-rebecca.png",
-    name: "Ica Rebecca",
+    name: "Rebecca Ica",
     review: "Wow, what an amazing dining experience!",
   },
   {
     img: "/images/testimonials/amanda-rebecca.png",
-    name: "Amanda Rebecca",
+    name: "Rebecca Amanda",
     review: "I had the most delightful experience dining at Jardin",
   },
 ];

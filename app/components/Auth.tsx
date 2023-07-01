@@ -1,35 +1,46 @@
 "use client";
 
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  updateProfile,
+} from "firebase/auth";
 import React, { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
-import { auth } from "../firebase";
-import { useRouter } from "next/navigation";
+import { auth, getError, googleProvider } from "../firebase";
 
 function Auth({ type }: { type: string }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordType, setPasswordType] = useState("password");
-  const { push } = useRouter();
 
   function register(name: string, email: string, password: string) {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         updateProfile(userCredential.user, {
           displayName: name,
-        })
-          .then(() => {
-            push("/");
-          })
-          .catch((error) => {
-            alert(`fail register: ${error.message}`);
-          });
+        }).catch((error) => {
+          alert(getError(error.code));
+        });
       })
       .catch((error) => {
-        alert(error.message);
+        alert(getError(error.code));
       });
+  }
+
+  function login(email: string, password: string) {
+    signInWithEmailAndPassword(auth, email, password).catch((error) => {
+      alert(getError(error.code));
+    });
+  }
+
+  function google() {
+    signInWithPopup(auth, googleProvider).catch((error) => {
+      alert(getError(error.code));
+    });
   }
 
   return (
@@ -118,11 +129,24 @@ function Auth({ type }: { type: string }) {
               </a>
             </div>
             <button
-              onClick={() =>
-                name !== "" && email !== "" && password !== ""
-                  ? register(name, email, password)
-                  : alert("Please fill all the fields.")
-              }
+              onClick={() => {
+                if (
+                  type === "register" &&
+                  name !== "" &&
+                  email !== "" &&
+                  password !== ""
+                ) {
+                  register(name, email, password);
+                } else if (
+                  type === "login" &&
+                  email !== "" &&
+                  password !== ""
+                ) {
+                  login(email, password);
+                } else {
+                  alert("Please fill all the fields.");
+                }
+              }}
               className="w-full h-[3.5rem] flex items-center justify-center border-2 border-[#013300] rounded-[0.625rem] bg-[#013300] text-white text-lg hover:bg-transparent hover:text-[#013300] duration-300 ease-linear font-medium"
             >
               {type === "login" ? "Login" : "Register"}
@@ -132,7 +156,10 @@ function Auth({ type }: { type: string }) {
               <p className="text-[#7c7c7c] font-medium">OR</p>
               <hr className="w-full border border-[#7c7c7c80]" />
             </div>
-            <button className="w-full h-[3.5rem] flex items-center justify-center border-2 border-[#013300] rounded-[0.625rem] bg-transparent text-[#013300] text-lg hover:bg-[#013300] hover:text-white duration-300 ease-linear">
+            <button
+              onClick={google}
+              className="w-full h-[3.5rem] flex items-center justify-center border-2 border-[#013300] rounded-[0.625rem] bg-transparent text-[#013300] text-lg hover:bg-[#013300] hover:text-white duration-300 ease-linear"
+            >
               <div className="flex items-center gap-3">
                 <FcGoogle fontSize="1.75rem" />
                 <span className="font-medium">
