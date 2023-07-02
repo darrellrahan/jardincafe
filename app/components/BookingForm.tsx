@@ -6,12 +6,14 @@ import { IoPersonOutline } from "react-icons/io5";
 import { MdOutlineTableBar } from "react-icons/md";
 import { useInputValueContext } from "../context/inputValue";
 import { useTogglerContext } from "../context/toggler";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase";
 
 function BookingForm() {
   const { inputValue, setInputValue } = useInputValueContext();
-  const { setIsSnackbar, setBookingDetail } = useTogglerContext();
-
+  const { setSnackbar, setBookingDetail } = useTogglerContext();
   const [timeInputType, setTimeInputType] = useState("text");
+  const [user] = useAuthState(auth);
 
   return (
     <>
@@ -228,9 +230,18 @@ function BookingForm() {
               inputValue.people === "" ||
               inputValue.time === ""
             ) {
-              setIsSnackbar(true);
+              return setSnackbar({
+                state: true,
+                message: "Please fill all the fields.",
+              });
+            }
+            if (!user) {
+              return setSnackbar({
+                state: true,
+                message: "You have to sign in to reserve a table.",
+              });
             } else {
-              setIsSnackbar(false);
+              setSnackbar({ state: false, message: "" });
               setBookingDetail(true);
             }
           }}

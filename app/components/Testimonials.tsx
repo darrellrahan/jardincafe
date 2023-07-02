@@ -9,7 +9,7 @@ function Testimonials() {
         <h1 className="text-[#013300] text-4xl font-semibold mb-16">
           What Our Customers Say
         </h1>
-        <div className="flex gap-5 overflow-x-auto scroll-smooth pb-12">
+        <div className="flex gap-5 overflow-x-auto scroll-smooth p-4 -translate-x-4 -translate-y-4">
           {testimonials.map((data) => (
             <Testimonial
               key={data.name}

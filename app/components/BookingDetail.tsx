@@ -7,11 +7,13 @@ import { MdOutlineTableBar } from "react-icons/md";
 import { useInputValueContext } from "../context/inputValue";
 import { useRouter } from "next/navigation";
 import { addDoc, collection } from "firebase/firestore";
-import { db } from "../firebase";
+import { auth, db } from "../firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function BookingDetail() {
   const { inputValue } = useInputValueContext();
   const { push } = useRouter();
+  const [user] = useAuthState(auth);
 
   async function booking(
     people: string,
@@ -21,6 +23,7 @@ function BookingDetail() {
   ) {
     try {
       await addDoc(collection(db, "booking"), {
+        name: user?.displayName,
         people: people,
         date: date,
         time: time,

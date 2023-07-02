@@ -15,13 +15,14 @@ function page() {
     if (user) push("/");
   }, [user]);
 
-  if (loading) return <Loading />;
+  if (!loading && !user)
+    return (
+      <main>
+        <Auth type="register" />
+      </main>
+    );
 
-  return (
-    <main>
-      <Auth type="register" />
-    </main>
-  );
+  return <Loading />;
 }
 
 export default page;

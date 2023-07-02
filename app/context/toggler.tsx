@@ -1,17 +1,25 @@
 "use client";
 
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 
 type TogglerContextType = {
-  isSnackbar: boolean;
-  setIsSnackbar: React.Dispatch<React.SetStateAction<boolean>>;
+  snackbar: {
+    state: boolean;
+    message: string;
+  };
+  setSnackbar: React.Dispatch<
+    React.SetStateAction<{
+      state: boolean;
+      message: string;
+    }>
+  >;
   bookingDetail: boolean;
   setBookingDetail: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const TogglerContext = React.createContext<TogglerContextType>({
-  isSnackbar: false,
-  setIsSnackbar: () => {},
+  snackbar: { state: false, message: "" },
+  setSnackbar: () => {},
   bookingDetail: false,
   setBookingDetail: () => {},
 });
@@ -23,24 +31,17 @@ export const TogglerProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [isSnackbar, setIsSnackbar] = useState(false);
   const [bookingDetail, setBookingDetail] = useState(false);
-
-  //   useEffect(() => {
-  //     const id = setInterval(() => {
-  //       setIsSnackbar(false);
-  //     }, 10000);
-
-  //     return () => {
-  //       clearInterval(id);
-  //     };
-  //   }, [isSnackbar]);
+  const [snackbar, setSnackbar] = useState({
+    state: false,
+    message: "",
+  });
 
   return (
     <TogglerContext.Provider
       value={{
-        isSnackbar,
-        setIsSnackbar,
+        snackbar,
+        setSnackbar,
         bookingDetail,
         setBookingDetail,
       }}
