@@ -1,5 +1,6 @@
 import React from "react";
 import { menu } from "../data/dry";
+import MenuCard from "./MenuCard";
 
 function Menu() {
   return (
@@ -8,25 +9,13 @@ function Menu() {
         <h1 className="text-[#013300] text-4xl font-semibold">Our Menu</h1>
         <div className="mt-16 grid grid-cols-4 gap-8">
           {menu.map((data) => (
-            <div
+            <MenuCard
               key={data.name}
-              className="border-[3.5px] border-[#013300] rounded p-6 flex flex-col justify-between gap-4"
-            >
-              <img
-                src={data.img}
-                alt={data.name}
-                width={200}
-                height={200}
-                className="mx-auto"
-              />
-              <h1 className="text-center text-[#013300] font-semibold text-xl mt-2">
-                {data.name}
-              </h1>
-              <p className="text-[#8e8e8e] text-sm">{data.desc}</p>
-              <p className="text-[#013300] font-semibold text-center">
-                {data.price}K
-              </p>
-            </div>
+              img={data.img}
+              name={data.name}
+              desc={data.desc}
+              price={data.price}
+            />
           ))}
         </div>
         <div className="mt-10 flex justify-center gap-4">

@@ -118,6 +118,19 @@ export const menuCategory = [
     desc: "7 AM - 11 AM ONLY",
     bg: "bg-[url('/images/menu/breakfast.png')]",
     link: "/menu/breakfast",
+    subcategories: [
+      {
+        name: "Pancake & Waffle",
+        menus: [
+          {
+            img: "/images/menu/quinoa-salad.png",
+            name: "Quinoa Beef Salad",
+            desc: "Healthy yet delicate duet of red quinoa & stirred fried beef on the bed of fresh mix green salad.",
+            price: 25,
+          },
+        ],
+      },
+    ],
   },
   {
     id: "all-day-breakfast",
