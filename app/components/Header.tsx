@@ -10,7 +10,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 function Header() {
   const [top, setTop] = useState("top-8");
-  const [user, loading, error] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   useEffect(() => {
     const onPageScroll = () => {

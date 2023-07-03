@@ -8,7 +8,7 @@ import Loading from "../components/Loading";
 import { useRouter } from "next/navigation";
 
 function page() {
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const { push } = useRouter();
 
   useEffect(() => {

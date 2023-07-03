@@ -13,7 +13,7 @@ import { auth } from "./firebase";
 import Loading from "./components/Loading";
 
 export default function Home() {
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
 
   if (loading) return <Loading />;
 

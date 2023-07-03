@@ -113,37 +113,53 @@ export const whyChooseUs = [
 
 export const menuCategory = [
   {
+    id: "breakfast",
     category: "Breakfast",
     desc: "7 AM - 11 AM ONLY",
     bg: "bg-[url('/images/menu/breakfast.png')]",
+    link: "/menu/breakfast",
   },
   {
+    id: "all-day-breakfast",
     category: "All Day Breakfast",
     bg: "bg-[url('/images/menu/all-day-breakfast.png')]",
+    link: "/menu/all-day-breakfast",
   },
   {
+    id: "appetizer",
     category: "Appetizer",
     bg: "bg-[url('/images/menu/appetizer.png')]",
+    link: "/menu/appetizer",
   },
   {
+    id: "main-course",
     category: "Main Course",
     bg: "bg-[url('/images/menu/main-course.png')]",
+    link: "/menu/main-course",
   },
   {
+    id: "pasta-pizza",
     category: "Pasta & Pizza",
     bg: "bg-[url('/images/menu/pasta-pizza.png')]",
+    link: "/menu/pasta-pizza",
   },
   {
+    id: "rice-bowl",
     category: "Rice Bowl",
     bg: "bg-[url('/images/menu/rice-bowl.png')]",
+    link: "/menu/rice-bowl",
   },
   {
+    id: "desert",
     category: "Desert",
     bg: "bg-[url('/images/menu/desert.png')]",
+    link: "/menu/desert",
   },
   {
+    id: "drinks",
     category: "Drinks",
     bg: "bg-[url('/images/menu/drink.png')]",
+    link: "/menu/drinks",
   },
 ];
 

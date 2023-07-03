@@ -35,11 +35,21 @@ function Footer() {
             Find your sanctuary in our coffee haven.
           </p>
           <div className="my-8 flex items-center gap-6 text-lg text-[#013300] font-semibold">
-            <a href="/">Home</a>
-            <a href="/menu">Menu</a>
-            <a href="/booking">Booking</a>
-            <a href="/about">About Us</a>
-            <a href="/privacy-policy">Privacy Policy</a>
+            <a className="hover:underline" href="/">
+              Home
+            </a>
+            <a className="hover:underline" href="/menu">
+              Menu
+            </a>
+            <a className="hover:underline" href="/booking">
+              Booking
+            </a>
+            <a className="hover:underline" href="/about">
+              About Us
+            </a>
+            <a className="hover:underline" href="/privacy-policy">
+              Privacy Policy
+            </a>
           </div>
           <hr className="w-full border border-[#7c7c7c50]" />
           <div className="flex justify-between items-center mt-12">
