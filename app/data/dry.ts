@@ -15,6 +15,10 @@ export const navLink = [
     link: "Booking",
   },
   {
+    url: "/experience",
+    link: "Experience",
+  },
+  {
     url: "/career",
     link: "Career",
   },

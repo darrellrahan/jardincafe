@@ -26,7 +26,7 @@ function Header() {
   return (
     <section id="header">
       <header
-        className={`fixed inset-x-32 ${top} bg-white flex justify-between items-center text-[#013300] text-lg font-semibold py-4 px-8 rounded-[2.5rem] z-50 duration-300 ease-linear`}
+        className={`fixed inset-x-32 ${top} bg-white flex justify-between items-center text-[#013300] text-lg font-semibold py-4 px-8 rounded-[2.5rem] z-50 duration-300 ease-linear border border-neutral-500 border-opacity-30 shadow-[0px_4px_4px_0px_#0000004D]`}
       >
         <a href="/" className="absolute left-4 translate-y-1">
           <img
