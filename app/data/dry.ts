@@ -212,3 +212,10 @@ export const testimonials = [
     review: "I had the most delightful experience dining at Jardin",
   },
 ];
+
+export const reviewAspects = [
+  { icon: "/images/review/food.svg", name: "Food" },
+  { icon: "/images/review/service.svg", name: "Service" },
+  { icon: "/images/review/value.svg", name: "Value" },
+  { icon: "/images/review/embience.svg", name: "Embience" },
+];
