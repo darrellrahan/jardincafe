@@ -16,6 +16,7 @@ function Testimonials() {
               img={data.img}
               name={data.name}
               review={data.review}
+              homepage
             />
           ))}
         </div>
