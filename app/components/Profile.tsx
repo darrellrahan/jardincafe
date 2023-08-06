@@ -12,6 +12,7 @@ function Profile() {
         <div className="grid grid-cols-3 text-xl font-medium">
           {profileTab.map((data) => (
             <button
+              key={data}
               onClick={() => setTab(data)}
               className={`${
                 tab === data
