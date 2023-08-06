@@ -11,16 +11,15 @@ import { auth } from "../firebase";
 function page() {
   const [user, loading] = useAuthState(auth);
 
-  if (!loading && user)
-    return (
-      <main>
-        <Header />
-        <Profile />
-        <Footer />
-      </main>
-    );
+  if (loading) return <Loading />;
 
-  return <Loading />;
+  return (
+    <main>
+      <Header />
+      <Profile />
+      <Footer />
+    </main>
+  );
 }
 
 export default page;
