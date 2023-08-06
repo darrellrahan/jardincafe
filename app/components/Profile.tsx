@@ -2,13 +2,16 @@
 
 import React, { useState } from "react";
 import { profileTab } from "../data/dry";
+import HistoryTab from "./HistoryTab";
+import ProfileTab from "./ProfileTab";
+import VoucherTab from "./VoucherTab";
 
 function Profile() {
   const [tab, setTab] = useState(profileTab[0]);
 
   return (
     <section id="profile">
-      <div className="mx-32 mt-40 mb-16 h-96 bg-white rounded-lg shadow border border-neutral-500">
+      <div className="mx-32 mt-40 mb-16 bg-white rounded-lg shadow border border-neutral-500">
         <div className="grid grid-cols-3 text-xl font-medium">
           {profileTab.map((data) => (
             <button
@@ -23,6 +26,11 @@ function Profile() {
               {data}
             </button>
           ))}
+        </div>
+        <div className="p-12">
+          {tab === "Profile" && <ProfileTab />}
+          {tab === "History" && <HistoryTab />}
+          {tab === "Voucher" && <VoucherTab />}
         </div>
       </div>
     </section>

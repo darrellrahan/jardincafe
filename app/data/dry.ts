@@ -221,3 +221,22 @@ export const reviewAspects = [
 ];
 
 export const profileTab = ["Profile", "History", "Voucher"];
+
+export const voucher = [
+  {
+    percentage: 50,
+    banner: "discount only for you",
+  },
+  {
+    percentage: 25,
+    banner: "you for only discount",
+  },
+  {
+    percentage: 20,
+    banner: "only discount for you",
+  },
+  {
+    percentage: 10,
+    banner: "for you discount only",
+  },
+];
