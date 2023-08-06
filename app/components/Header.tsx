@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 import { navLink } from "../data/dry";
 import { AiOutlineLogin } from "react-icons/ai";
 import { usePathname } from "next/navigation";
-import { signOut } from "firebase/auth";
-import { auth, getError } from "../firebase";
+import { IoPersonOutline } from "react-icons/io5";
+import { auth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 function Header() {
@@ -51,19 +51,12 @@ function Header() {
           ))}
         </div>
         {user ? (
-          <div className="flex gap-4 items-center">
-            <span>{user.displayName}</span>
-            <button
-              onClick={() => {
-                signOut(auth).catch((error) => {
-                  alert(getError(error.code));
-                });
-              }}
-              className="bg-transparent px-3 py-1 text-sm border-2 border-[#013300] rounded-full hover:bg-[#013300] hover:text-white duration-300 ease-linear"
-            >
-              Logout
-            </button>
-          </div>
+          <a
+            href="/profile"
+            className="bg-[#013300] rounded-lg p-2 text-white text-lg"
+          >
+            <IoPersonOutline />
+          </a>
         ) : (
           <a href="/login" className="flex items-center gap-2 group">
             <span className="relative after:absolute after:bottom-0 after:w-0 group-hover:after:w-full after:inset-x-0 after:h-[2px] after:bg-[#013300] after:duration-300 after:ease-linear">

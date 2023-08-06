@@ -99,17 +99,17 @@ export const socials = [
 
 export const whyChooseUs = [
   {
-    icon: "/images/why-choose-us/delicious-food.png",
+    icon: "/images/why-choose-us/1.svg",
     title: "Delicious Food",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
-    icon: "/images/why-choose-us/cozy-place.png",
+    icon: "/images/why-choose-us/2.svg",
     title: "Cozy Place",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
-    icon: "/images/why-choose-us/easy-payment.png",
+    icon: "/images/why-choose-us/3.svg",
     title: "Easy Payment",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
@@ -219,3 +219,5 @@ export const reviewAspects = [
   { icon: "/images/review/value.svg", name: "Value" },
   { icon: "/images/review/embience.svg", name: "Embience" },
 ];
+
+export const profileTab = ["Profile", "History", "Voucher"];
