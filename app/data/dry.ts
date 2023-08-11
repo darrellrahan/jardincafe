@@ -19,8 +19,8 @@ export const navLink = [
     link: "Experience",
   },
   {
-    url: "/career",
-    link: "Career",
+    url: "/blog",
+    link: "Blog",
   },
   {
     url: "/about",
@@ -238,5 +238,28 @@ export const voucher = [
   {
     percentage: 10,
     banner: "for you discount only",
+  },
+];
+
+export const blog = [
+  {
+    thumbnail: "/images/blog/2.png",
+    date: "6 September 2006",
+    title: "Intip Desain Interior yang Instagramable dan Unik!",
+  },
+  {
+    thumbnail: "/images/blog/3.png",
+    date: "4 April 2006",
+    title: "Jardin Cafe Hadirkan Konsep Baru yang Lebih Luas dan Fresh",
+  },
+  {
+    thumbnail: "/images/blog/4.png",
+    date: "6 September 2023",
+    title: "Jardin Cafe Merayakan Ulang Tahun ke-5 dengan Promo Menarik",
+  },
+  {
+    thumbnail: "/images/blog/5.png",
+    date: "4 April 2023",
+    title: "Jardin Cafe Terkenal dengan Kopi Premium dan Suasana Cozy",
   },
 ];
